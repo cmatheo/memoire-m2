@@ -1,3 +1,4 @@
+```mermaid
 graph TB
     subgraph "Sources de Données Inati"
         A1[("PostgreSQL Principal<br/>Tables métiers Symfony<br/>- Locataires<br/>- Baux<br/>- Paiements")]
@@ -103,3 +104,4 @@ graph TB
     style B3 fill:#fff9c4,stroke:#ff9800,stroke-width:2px
     style D2 fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
     style F1 fill:#c8e6c9,stroke:#4caf50,stroke-width:3px
+```
