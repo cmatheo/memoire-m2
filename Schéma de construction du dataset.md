@@ -48,7 +48,7 @@ graph TB
     end
     
     subgraph "Dataset Final"
-        F1[("ml_dataset_consolidated<br/>Vue matérialisée<br/>~43 variables dont 12 géospatiales<br/>~15k observations<br/>Granularité: projet-mois")]
+        F1[("ml_dataset_consolidated<br/>Vue matérialisée<br/>15k observations<br/>Granularité: projet-mois")]
     end
     
     A1 --> B1
