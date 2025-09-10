@@ -6,12 +6,6 @@ graph LR
             A2[["Module dédié IA"]]
         end
         
-        subgraph "Container PostgreSQL"
-            B1[("Base principale<br/>Données métiers")]
-            B2[("Schéma IA<br/>Modèle en étoile")]
-            B3[("ml_dataset_consolidated<br/>Vue matérialisée<br/>Refresh quotidien")]
-        end
-        
         subgraph "Container Python ML"
             C1[["FastAPI<br/>Endpoints REST"]]
             C2[["Pipeline Prédiction<br/>- XGBoost (occupation)<br/>- Random Forest (validation)<br/>- Prophet (montée puissance)<br/>- LSTM (patterns complexes)"]]
@@ -23,10 +17,18 @@ graph LR
             D2[["Cache L2<br/>Simulations<br/>TTL: 24h"]]
         end
     end
-    
-    subgraph "Monitoring"
-        E1[["Scaleway Cockpit<br/>Grafana"]]
-        E2[["Sentry<br/>Errors tracking"]]
+
+    subgraph "Infrastructure Scaleway"
+        subgraph "Instance PostgreSQL"
+            B1[("Base principale<br/>Données métiers")]
+            B2[("Schéma IA<br/>Modèle en étoile")]
+            B3[("ml_dataset_consolidated<br/>Vue matérialisée<br/>Refresh quotidien")]
+        end
+        
+        subgraph "Monitoring"
+            E1[["Scaleway Cockpit<br/>Grafana"]]
+            E2[["Sentry<br/>Errors tracking"]]
+        end
     end
     
     B1 --> B2
@@ -51,4 +53,5 @@ graph LR
     style B3 fill:#c8e6c9,stroke:#4caf50,stroke-width:2px
     style C2 fill:#ffccbc
     style D1 fill:#fff3e0
+
 ```
